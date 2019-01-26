@@ -40,7 +40,8 @@
     <!-- 配置事务管理器 ,管理器需要事务，事务从Connection获得，连接从连接池DataSource获得 -->
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"></property>
-        <property name="defaultTimeout" value="3"></property>
+        <property name="defaultTimeout" value="3000"></property>
+        <!--<property name="nestedTransactionAllowed" value="true"></property>-->
     </bean>
 
     <bean id="jdbcTemplate"

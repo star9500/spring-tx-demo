@@ -19,6 +19,15 @@ public class UserBalancePO {
      */
     private double balance;
 
+    public UserBalancePO() {
+
+    }
+
+    public UserBalancePO(String userName, double balance) {
+        this.userName = userName;
+        this.balance = balance;
+    }
+
     public int getId() {
         return id;
     }

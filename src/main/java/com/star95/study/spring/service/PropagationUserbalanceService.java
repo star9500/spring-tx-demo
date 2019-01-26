@@ -35,4 +35,33 @@ public interface PropagationUserbalanceService extends UserBalanceService {
      */
     void propagationrequiredTest();
 
+    /**
+     * 事务传播机制-requires_new测试
+     */
+    void propagationrequires_newTest();
+
+    /**
+     * 事务传播机制-supports测试
+     */
+    void propagationsupportsTest();
+
+    /**
+     * 事务传播机制-not_supported测试
+     */
+    void propagationnot_supportedTest();
+
+    /**
+     * 事务传播机制-mandatory测试
+     */
+    void propagationmandatoryTest();
+
+    /**
+     * 事务传播机制-nested测试
+     */
+    void propagationnestedTest();
+
+    /**
+     * 事务传播机制-never测试
+     */
+    void propagationneverTest();
 }

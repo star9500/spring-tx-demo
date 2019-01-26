@@ -50,16 +50,16 @@ public class UserBalanceDaoImpl extends JdbcDaoSupport implements UserBalanceDao
 
     @Override
     public void insert(UserBalancePO po) {
-        this.getJdbcTemplate().update("insert into user_balance values(?,?)",po.getUserName(),po.getBalance());
+        this.getJdbcTemplate().update("insert into user_balance(user_name,balance) values(?,?)", po.getUserName(), po.getBalance());
     }
 
     @Override
     public void delete(int id) {
-        this.getJdbcTemplate().update("delete from user_balance where id=?",id);
+        this.getJdbcTemplate().update("delete from user_balance where id=?", id);
     }
 
     @Override
     public void update(UserBalancePO po) {
-        this.getJdbcTemplate().update("update user_balance set user_name=?,balance=? where id=?",po.getUserName(),po.getBalance(),po.getId());
+        this.getJdbcTemplate().update("update user_balance set user_name=?,balance=? where id=?", po.getUserName(), po.getBalance(), po.getId());
     }
 }
