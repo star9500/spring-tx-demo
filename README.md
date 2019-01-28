@@ -41,7 +41,7 @@
 1. 默认情况下，事务只有遇到运行时异常（RuntimeException）时才会回滚。
 2. 一般检查时异常或者被try...catch住的时候不会回滚。
 3. 可以申明事务在遇到特定的检查型异常时回滚，需要配置相应的异常类型，使用rollbackFor或者rollbackForClassName。
-4. 也可以申明事务遇到特定的异常不混滚，使用noRollbackForClassName。
+4. 也可以申明事务遇到特定的异常不回滚，使用noRollbackForClassName。
 
 ## spring事务配置方式及测试用例
 ### spring事务配置的5种方式

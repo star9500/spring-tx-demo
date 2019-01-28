@@ -16,6 +16,12 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 隔离级别测试使用多线程模拟并发事务操作<br/>
+ * 1、读未提交隔离级别测试用例：readUncommittedTest<br/>
+ * 2、读提交隔离级别测试用例：readCommittedTest<br/>
+ * 3、可重复读隔离级别测试用例：repeatableReadTest<br/>
+ * 4、串行化隔离级别测试用例：serializableTest隔离级别测试<br/>
+ *
  * @author hemingzhun
  * @date 2019/1/24
  */
@@ -24,14 +30,13 @@ import java.util.concurrent.TimeUnit;
 public class IsolationTest {
 
     ThreadPoolExecutor executor = null;
+    @Autowired
+    IsolationUserbalanceService isolationUserbalanceService;
 
     @Before
     public void init() {
         executor = new ThreadPoolExecutor(4, 4, 30, TimeUnit.SECONDS, new ArrayBlockingQueue<>(16));
     }
-
-    @Autowired
-    IsolationUserbalanceService isolationUserbalanceService;
 
     @Test
     public void readUncommittedTest() throws Exception {
